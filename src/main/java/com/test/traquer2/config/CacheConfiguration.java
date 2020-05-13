@@ -40,6 +40,33 @@ public class CacheConfiguration {
             createCache(cm, com.test.traquer2.domain.User.class.getName());
             createCache(cm, com.test.traquer2.domain.Authority.class.getName());
             createCache(cm, com.test.traquer2.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.test.traquer2.domain.Session.class.getName());
+            createCache(cm, com.test.traquer2.domain.Schedule.class.getName());
+            createCache(cm, com.test.traquer2.domain.Candidate.class.getName());
+            createCache(cm, com.test.traquer2.domain.Location.class.getName());
+            createCache(cm, com.test.traquer2.domain.ProctoringInstance.class.getName());
+            createCache(cm, com.test.traquer2.domain.SessionBreaks.class.getName());
+            createCache(cm, com.test.traquer2.domain.Incident.class.getName());
+            createCache(cm, com.test.traquer2.domain.CategoryInstance.class.getName());
+            createCache(cm, com.test.traquer2.domain.SubcategoryInstance.class.getName());
+            createCache(cm, com.test.traquer2.domain.MajorIncident.class.getName());
+            createCache(cm, com.test.traquer2.domain.MajorIncidentSource.class.getName());
+            createCache(cm, com.test.traquer2.domain.Proctor.class.getName());
+            createCache(cm, com.test.traquer2.domain.SupportInstance.class.getName());
+            createCache(cm, com.test.traquer2.domain.SupportPerson.class.getName());
+            createCache(cm, com.test.traquer2.domain.DeliveryType.class.getName());
+            createCache(cm, com.test.traquer2.domain.ExamType.class.getName());
+            createCache(cm, com.test.traquer2.domain.DeliveryStatus.class.getName());
+            createCache(cm, com.test.traquer2.domain.FailureStage.class.getName());
+            createCache(cm, com.test.traquer2.domain.Category.class.getName());
+            createCache(cm, com.test.traquer2.domain.Subcategory.class.getName());
+            createCache(cm, com.test.traquer2.domain.Exam.class.getName());
+            createCache(cm, com.test.traquer2.domain.Region.class.getName());
+            createCache(cm, com.test.traquer2.domain.ExamBackend.class.getName());
+            createCache(cm, com.test.traquer2.domain.OfferType.class.getName());
+            createCache(cm, com.test.traquer2.domain.CloudInstance.class.getName());
+            createCache(cm, com.test.traquer2.domain.CloudRegion.class.getName());
+            createCache(cm, com.test.traquer2.domain.Offer.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

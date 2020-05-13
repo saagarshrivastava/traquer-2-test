@@ -1,0 +1,65 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="traquerTestApp.supportPerson.home.title">Support People</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-support-person" [routerLink]="['/support-person/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="traquerTestApp.supportPerson.home.createLabel">
+            Create a new Support Person
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="supportPeople?.length === 0">
+        <span jhiTranslate="traquerTestApp.supportPerson.home.notFound">No supportPeople found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="supportPeople?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="traquerTestApp.supportPerson.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="traquerTestApp.supportPerson.email">Email</span></th>
+                    <th scope="col" ><span jhiTranslate="traquerTestApp.supportPerson.office">Office</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let supportPerson of supportPeople ;trackBy: trackId">
+                    <td><a [routerLink]="['/support-person', supportPerson.id, 'view']">{{ supportPerson.id }}</a></td>
+                    <td>{{ supportPerson.name }}</td>
+                    <td>{{ supportPerson.email }}</td>
+                    <td>{{ supportPerson.office }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/support-person', supportPerson.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/support-person', supportPerson.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(supportPerson)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
