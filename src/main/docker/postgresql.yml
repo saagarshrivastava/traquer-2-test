@@ -1,0 +1,11 @@
+version: '2'
+services:
+  traquertest-postgresql:
+    image: postgres:12.1
+    # volumes:
+    #     - ~/volumes/jhipster/TraquerTest/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=TraquerTest
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
